@@ -1,4 +1,4 @@
-# DonorSearch NP Organizations
+# DonorSearch
 
 Web development example for filtering non-profit organizations from IRS data.
 
