@@ -18,7 +18,5 @@ function processFile(el) {
     else {
         // return error message
         document.getElementById("processing").innerHTML = "Invalid file type. Please select a <code>.txt</code> file.";
-        // clear file from input
-        el.value = "";
     }
 }
