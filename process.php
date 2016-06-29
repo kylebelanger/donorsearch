@@ -12,7 +12,6 @@ include_once('php/database.php');
 // Create new database object
 $DB = new DBPDO();
 
-
 // If uploaded file is valid
 if(fileValidation($_FILES["file"]) == true) {
     // perform processing
@@ -45,12 +44,50 @@ function fileValidation($file) {
  *  @param Array - file for processing
 */
 function processFile($file) {
-    $file_handle = fopen($file["tmp_name"], "r");
-    while (!feof($file_handle)) {
-       $line = fgets($file_handle);
-       echo $line . "<br>";
+    // set memory limit
+    ini_set('memory_limit', '256M');
+
+    // get the file contents
+    $file_contents = fopen($file["tmp_name"], "r");
+
+    // declare array to hold each line in file
+    $organizations = array();
+
+    // for each line in file
+    while (!feof($file_contents)) {
+        // get current line in file
+        $line = fgets($file_contents);
+
+        // if line is empty or blank, skip
+        if (($line !== " ") && ($line !== "") && (strlen($line) > 2)) {
+            // push line to array
+            $organizations[] = $line;
+        }
     }
-    fclose($file_handle);
+
+    $arr = array();
+
+    for ($i = 0; $i < 10; $i++) {
+      # code...
+      $arr[] = $organizations[$i];
+    }
+
+    print_r($arr);
+
+    // close the file
+    fclose($file_contents);
 }
+
+
+
+/*  insertRecord
+ *  Insert new record into table
+ *
+ *  @param Array - array of line data to insert
+*/
+function insertRecord($record) {
+
+}
+
 
 ?>
