@@ -1,3 +1,4 @@
+
 <?php
 /*
  *  Copyright (C) 2012
@@ -23,7 +24,7 @@
 class MySQL {
 
 	// Base variables
-  public  $lastError;         // Holds the last error
+    public  $lastError;         // Holds the last error
 	public  $lastQuery;         // Holds the last query
 	public  $result;            // Holds the MySQL query result
 	public  $records;           // Holds the total number of records returned
