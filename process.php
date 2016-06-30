@@ -6,12 +6,6 @@ define('DATABASE_USER', 'user');
 define('DATABASE_PASS', 'password');
 define('DATABASE_HOST', 'localhost');
 
-// Globals for data cache
-$city_array = [];
-$state_array = [];
-$country_array = [];
-
-
 // Include database class
 include_once('php/database.php');
 
