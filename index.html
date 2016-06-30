@@ -15,10 +15,10 @@
 
       <p>Please upload file below:</p>
 
-      <form action="process.php" method="post" enctype="multipart/form-data">
-          <input type="file" name="file" accept="text/plain">
-          <!--<small id="processing"></small>-->
-          <input type="submit">
+      <form action="process.php" onsubmit="processFile(this)" method="post" enctype="multipart/form-data">
+          <input id="file" type="file" name="file" accept="text/plain">
+          <input id="submit" type="submit">
+          <small id="processing"></small>
       </form>
 
   </body>

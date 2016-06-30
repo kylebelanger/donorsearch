@@ -61,6 +61,8 @@ function processFile($file) {
 
     // Run SQL query
     $DB->execute($SQL_statement);
+
+    echo('Complete...');
 }
 
 
