@@ -52,7 +52,7 @@ function fileValidation($file) {
 */
 function processFile($file) {
     // set memory limit
-    ini_set('memory_limit', '256M');
+    ini_set('memory_limit', '1256M');
 
     // get the file contents
     $file_contents = fopen($file["tmp_name"], "r");
@@ -67,24 +67,28 @@ function processFile($file) {
 
         // if line is empty or blank, skip
         if (($line !== " ") && ($line !== "") && (strlen($line) > 2)) {
-            // push line to array
-            $organizations[] = $line;
+
+            // array to hold seperated data in this line
+            $lineData = explode('|', $line);
+            $organizations[] = $lineData;
         }
     }
 
-    /*for ($i = 0; $i < 10; $i++) {
-        $str = $organizations[$i];
+    $tes = array();
 
-        $arr = explode('|', $str);
-        print_r($arr);
-    }*/
+    for ($i = 0; $i < 10; $i++) {
+        $tes[] = $organizations[$i];
+    }
 
+    print_r($tes);
+/*
     for ($i = 0; $i < 50000; $i++) {
         $str = $organizations[$i];
 
         $arr = explode('|', $str);
         insertRecord($arr);
     }
+*/
 
     // close the file
     fclose($file_contents);
@@ -100,8 +104,8 @@ function processFile($file) {
 function insertRecord($record) {
 
     global $city_array;
-    global $state_array;
-    global $country_array;
+    //global $state_array;
+    //global $country_array;
 
     // check city for match
     $city_key = checkMatch($city_array, $record[2]);
