@@ -12,9 +12,9 @@ USE donorsearch;
 
 -- Create table: organizations
 CREATE TABLE organization (
-	ein						INT							PRIMARY KEY		AUTO_INCREMENT,
+	ein			INT			PRIMARY KEY		AUTO_INCREMENT,
 	legal_name		VARCHAR(150),
-	city_name			VARCHAR(150),
+	city_name		VARCHAR(150),
 	state_name		VARCHAR(150),
 	country_name 	VARCHAR(150),
 	description		TEXT
