@@ -7,7 +7,7 @@ define('DATABASE_PASS', 'password');
 define('DATABASE_HOST', 'localhost');
 
 // Include database class
-include_once($_SERVER['DOCUMENT_ROOT'] . "app/assets/php/db.php");
+include_once("../assets/php/database.php");
 
 // Create new database object
 $DB = new DBPDO();
@@ -23,7 +23,7 @@ $records = $DB->fetchAll("SELECT * FROM organization LIMIT 30");
   <head>
       <meta charset="utf-8">
       <title>DonorSearch</title>
-      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     </head>
 
   <body>
@@ -86,7 +86,7 @@ $records = $DB->fetchAll("SELECT * FROM organization LIMIT 30");
 
   </body>
 
-  <script src="/app/assets/js/actions.js">
+  <script src="../assets/js/actions.js">
   </script>
 
 </html>

@@ -7,7 +7,7 @@ define('DATABASE_PASS', 'password');
 define('DATABASE_HOST', 'localhost');
 
 // Include database class
-include_once($_SERVER['DOCUMENT_ROOT'] . "/app/assets/php/db.php");
+include_once("../assets/php/database.php");
 
 // Create new database object
 $DB = new DBPDO();
@@ -65,7 +65,7 @@ function processFile($file) {
     echo("Upload complete... Redirecting.");
 
     // Complete? Re-direct to display page
-    header('Location: ../views/display.php');
+    header("Location: ../views/display.php");
 }
 
 
