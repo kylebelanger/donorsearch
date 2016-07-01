@@ -9,13 +9,13 @@
 
   <body>
       <h2>DonorSearch</h2>
-      <p>Example for filtering non-profit organizations from IRS data.</p>
+      <p>Example for filtering non-profit organizations from <a href="https://apps.irs.gov/app/eos/forwardToPub78Download.do">IRS dataset</a>.</p>
 
       <hr>
 
       <p>Please upload file below:</p>
 
-      <form action="process.php" onsubmit="processFile(this)" method="post" enctype="multipart/form-data">
+      <form action="app/helpers/processFile.php" onsubmit="processFile(this)" method="post" enctype="multipart/form-data">
           <input id="file" type="file" name="file" accept="text/plain">
           <input id="submit" type="submit">
           <small id="processing"></small>
@@ -23,7 +23,7 @@
 
   </body>
 
-  <script src="js/events.js">
+  <script src="/app/assets/js/events.js">
   </script>
 
 </html>
