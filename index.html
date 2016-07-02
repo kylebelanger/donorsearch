@@ -9,7 +9,7 @@
 
   <body>
       <h2>DonorSearch</h2>
-      <p>Example for filtering non-profit organizations from <a href="https://apps.irs.gov/app/eos/forwardToPub78Download.do">IRS dataset</a>.</p>
+      <p>Example for filtering non-profit organizations from <a href="https://apps.irs.gov/app/eos/forwardToPub78Download.do">IRS data</a>.</p>
 
       <hr>
 

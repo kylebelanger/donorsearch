@@ -1,5 +1,11 @@
 <?php
 
+/*  actions
+ *  Performs various GET operations and queries on the database
+ *  Returns HTML string data response (i.e. "<table><tr></tr></table>") to display on view
+ *
+*/
+
 // Define global constants
 define('DATABASE_NAME', 'donorsearch');
 define('DATABASE_USER', 'user');
@@ -19,13 +25,13 @@ $query = json_decode($_GET['q'], true);
 $records = null;
 
 
-
-// If filter text is not null?
-// -----------------------
+/*  If filter is not null?
+ *  ________________________________
+*/
 if ($query[1] != "") {
       // Initial records
       $records = $DB->fetchAll("SELECT * FROM organization
-                                WHERE $query[0] LIKE '%$query[1]%' LIMIT 350");
+                                WHERE $query[0] LIKE '%$query[1]%' LIMIT 1050");
 
       // print table on DOM
       echo("<table>
@@ -58,11 +64,13 @@ if ($query[1] != "") {
 
       echo("</table>");
 }
-// Else perform sorting
-// -----------------------
+/*  else perform sorting operations
+ *  ________________________________
+*/
 else {
-    // Query ID: 1 (ALL/Default)
-    // -----------------------
+    /*  query key: "legal_name"
+     *  ________________________________
+    */
     if ($query[0] == "legal_name") {
           // Initial records
           $records = $DB->fetchAll("SELECT * FROM organization
@@ -99,8 +107,9 @@ else {
 
           echo("</table>");
     }
-    // Query ID: 2 (City)
-    // -----------------------
+    /*  query key: "city_name"
+     *  ________________________________
+    */
     elseif ($query[0] == "city_name") {
           // Initial records
           $records = $DB->fetchAll("SELECT * FROM organization
@@ -141,8 +150,9 @@ else {
 
           echo("</table>");
     }
-    // Query ID: 3 (State)
-    // -----------------------
+    /*  query key: "state_name"
+     *  ________________________________
+    */
     elseif ($query[0] == "state_name") {
           // Initial records
           $records = $DB->fetchAll("SELECT state_name, COUNT(*)
@@ -175,8 +185,9 @@ else {
 
           echo("</table>");
     }
-    // Query ID: 4 (Foundation)
-    // -----------------------
+    /*  query key: "foundation"
+     *  ________________________________
+    */
     elseif ($query[0] == "foundation") {
           // Initial records
           $records = $DB->fetchAll("SELECT * FROM organization
