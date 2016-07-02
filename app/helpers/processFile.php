@@ -1,5 +1,11 @@
 <?php
 
+/*  processFile
+ *  Processes uploaded text file, and performs data validation
+ *  Inserts file contents into MySQL table via LOAD DATA INFILE query
+ *
+*/
+
 // Define global constants
 define('DATABASE_NAME', 'donorsearch');
 define('DATABASE_USER', 'user');
@@ -21,7 +27,6 @@ else {
     // return error
     echo "File is invalid";
 }
-
 
 /*  fileValidation
  *  Ensure that the file is a .txt format
