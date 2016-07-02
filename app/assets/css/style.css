@@ -26,6 +26,14 @@ table tr.header td {
     font-style: italic;
 }
 
+table tr:hover {
+    background-color: #ffffdf;
+}
+
+table tr td {
+    padding: 5px 5px 5px 0;
+}
+
 .highlight {
     background-color: #efefef;
 }
