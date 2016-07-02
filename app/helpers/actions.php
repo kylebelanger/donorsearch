@@ -31,7 +31,7 @@ $records = null;
 if ($query[1] != "") {
       // Initial records
       $records = $DB->fetchAll("SELECT * FROM organization
-                                WHERE $query[0] LIKE '%$query[1]%' LIMIT 1050");
+                                WHERE $query[0] LIKE '%$query[1]%' LIMIT 30");
 
       // print table on DOM
       echo("<table>

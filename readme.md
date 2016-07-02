@@ -46,7 +46,7 @@ This web application features two views:
 
 1. The uploaded file is sent to the server via a post request, and processed via a helper in [`app/helpers/processFile.php`](https://github.com/kylesb/donorsearch/blob/master/app/helpers/processFile.php). The uploaded file is checked for validation. The file is read into the table via the [`LOAD DATA INFILE`](http://dev.mysql.com/doc/refman/5.7/en/load-data.html) SQL query.
 
-2. Once the upload is complete, a helper file [`app/helpers/processFile.php`](https://github.com/kylesb/donorsearch/blob/master/app/helpers/processFile.php) redirects to a view [`app/views/display.php`](https://github.com/kylesb/donorsearch/blob/master/app/views/display.php) to display the data. This view features various sorting and filtering operations on the data.
+2. Once the upload is complete, the helper file [`app/helpers/processFile.php`](https://github.com/kylesb/donorsearch/blob/master/app/helpers/processFile.php) redirects to a view [`app/views/display.php`](https://github.com/kylesb/donorsearch/blob/master/app/views/display.php) to display the data. This view features various sorting and filtering operations on the data.
 
 3. Filtering and sorting is performed asynchronously via XMLHTTP requests in [`app/assets/js/actions.js`](https://github.com/kylesb/donorsearch/blob/master/app/assets/js/actions.js). This file sends GET requests to a PHP helper  [`app/helpers/actions.php`](https://github.com/kylesb/donorsearch/blob/master/app/helpers/actions.php) which performs various queries on the database. The data is returned to be displayed on the view.  
 
